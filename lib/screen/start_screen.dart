@@ -15,6 +15,31 @@ class StartScreen extends StatelessWidget {
           logoPath,
           width: 200,
         ),
+        const SizedBox(
+          height: 40,
+        ),
+        const Text(
+          'Learning flutter',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 12,
+          ),
+        ),
+        const SizedBox(
+          height: 80,
+        ),
+        OutlinedButton(
+          onPressed: () {},
+          style: const ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(
+              Colors.deepPurple,
+            ),
+            foregroundColor: MaterialStatePropertyAll(
+              Colors.white,
+            ),
+          ),
+          child: const Text('Start quiz'),
+        ),
       ],
     ));
   }
