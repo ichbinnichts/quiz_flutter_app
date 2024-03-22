@@ -1,9 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/data/questions.dart';
 
 class ResultScreen extends StatefulWidget {
   ResultScreen({super.key, required this.selectedAnswers});
 
   List<String> selectedAnswers;
+
+  List<Map<String, Object>> getSummaryData() {
+    final List<Map<String, Object>> summary = [];
+
+    for (var i = 0; i < selectedAnswers.length; i++) {
+      summary.add({
+        'question_index': i,
+        'question': questions[i].text,
+        'right_answer': questions[i].answers[0],
+        'selected_answer': selectedAnswers[i],
+      });
+    }
+
+    return summary;
+  }
 
   @override
   State<ResultScreen> createState() => _ResultScreenState();
