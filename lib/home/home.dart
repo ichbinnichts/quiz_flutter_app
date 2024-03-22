@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/screen/start_screen.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   final String title = 'Quiz app';
 
   @override
