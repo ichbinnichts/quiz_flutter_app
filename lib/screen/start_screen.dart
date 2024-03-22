@@ -30,13 +30,9 @@ class StartScreen extends StatelessWidget {
         ),
         OutlinedButton(
           onPressed: () {},
-          style: const ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(
-              Colors.deepPurple,
-            ),
-            foregroundColor: MaterialStatePropertyAll(
-              Colors.white,
-            ),
+          style: OutlinedButton.styleFrom(
+            foregroundColor: Colors.white,
+            backgroundColor: Colors.deepPurple,
           ),
           child: const Text('Start quiz'),
         ),
