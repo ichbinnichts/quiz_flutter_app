@@ -17,6 +17,16 @@ class _QuestionsSummaryState extends State<QuestionsSummary> {
         return Row(
           children: [
             Text(((data['question_index'] as int) + 1).toString()),
+            Column(
+              children: [
+                Text(data['question'] as String),
+                const SizedBox(
+                  height: 20,
+                ),
+                Text(data['selected_answer'] as String),
+                Text(data['right_answer'] as String),
+              ],
+            )
           ],
         );
       }).toList(),

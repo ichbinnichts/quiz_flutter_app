@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
+import 'package:quiz_app/utils/questions_summary.dart';
 
 class ResultScreen extends StatefulWidget {
   ResultScreen({super.key, required this.selectedAnswers});
@@ -39,7 +40,7 @@ class _ResultScreenState extends State<ResultScreen> {
             const SizedBox(
               height: 20,
             ),
-            const Text('Test data'),
+            QuestionsSummary(summaryData: widget.getSummaryData()),
             const SizedBox(
               height: 20,
             ),

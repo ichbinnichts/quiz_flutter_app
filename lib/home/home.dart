@@ -28,7 +28,6 @@ class _HomeState extends State<Home> {
     if (selectedAnswers.length == questions.length) {
       setState(() {
         activeScreen = 'result-screen';
-        selectedAnswers.clear();
       });
     }
   }
