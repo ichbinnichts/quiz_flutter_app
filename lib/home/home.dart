@@ -11,11 +11,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final String title = 'Quiz app';
-  Widget activeScreen = const StartScreen();
+  String activeScreen = 'start-screen';
 
-  switchScreen() {
+  void switchScreen() {
     setState(() {
-      activeScreen = const QuestionsScreen();
+      activeScreen = 'questions-screen';
     });
   }
 
@@ -38,7 +38,9 @@ class _HomeState extends State<Home> {
             end: Alignment.topLeft,
           ),
         ),
-        child: activeScreen,
+        child: activeScreen == 'start-screen'
+            ? StartScreen(startQuiz: switchScreen)
+            : const QuestionsScreen(),
       ),
     );
   }
