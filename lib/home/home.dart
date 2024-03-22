@@ -41,7 +41,7 @@ class _HomeState extends State<Home> {
     }
 
     if (activeScreen == 'result-screen') {
-      currentScreen = const ResultScreen();
+      currentScreen = ResultScreen(selectedAnswers: selectedAnswers);
     }
 
     if (activeScreen == 'start-screen') {

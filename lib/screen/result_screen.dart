@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatefulWidget {
-  const ResultScreen({super.key});
+  ResultScreen({super.key, required this.selectedAnswers});
+
+  List<String> selectedAnswers;
 
   @override
   State<ResultScreen> createState() => _ResultScreenState();
