@@ -21,7 +21,10 @@ class AnswerButton extends StatelessWidget {
           ),
           backgroundColor: Colors.deepPurple[300],
           foregroundColor: Colors.white),
-      child: Text(text),
+      child: Text(
+        text,
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }
