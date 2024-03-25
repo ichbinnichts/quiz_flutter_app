@@ -12,26 +12,31 @@ class QuestionsSummary extends StatefulWidget {
 class _QuestionsSummaryState extends State<QuestionsSummary> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: widget.summaryData.map((data) {
-        return Row(
-          children: [
-            Text(((data['question_index'] as int) + 1).toString()),
-            Expanded(
-              child: Column(
-                children: [
-                  Text(data['question'] as String),
-                  const SizedBox(
-                    height: 20,
+    return SizedBox(
+      height: 300,
+      child: SingleChildScrollView(
+        child: Column(
+          children: widget.summaryData.map((data) {
+            return Row(
+              children: [
+                Text(((data['question_index'] as int) + 1).toString()),
+                Expanded(
+                  child: Column(
+                    children: [
+                      Text(data['question'] as String),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Text(data['selected_answer'] as String),
+                      Text(data['right_answer'] as String),
+                    ],
                   ),
-                  Text(data['selected_answer'] as String),
-                  Text(data['right_answer'] as String),
-                ],
-              ),
-            )
-          ],
-        );
-      }).toList(),
+                )
+              ],
+            );
+          }).toList(),
+        ),
+      ),
     );
   }
 }
