@@ -32,6 +32,13 @@ class _HomeState extends State<Home> {
     }
   }
 
+  void restartQuiz() {
+    setState(() {
+      selectedAnswers.clear();
+      activeScreen = 'start-screen';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget currentScreen = StartScreen(startQuiz: switchScreen);
@@ -40,7 +47,10 @@ class _HomeState extends State<Home> {
     }
 
     if (activeScreen == 'result-screen') {
-      currentScreen = ResultScreen(selectedAnswers: selectedAnswers);
+      currentScreen = ResultScreen(
+        selectedAnswers: selectedAnswers,
+        onRestart: restartQuiz,
+      );
     }
 
     if (activeScreen == 'start-screen') {

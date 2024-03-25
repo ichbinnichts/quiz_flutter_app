@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/data/questions.dart';
-import 'package:quiz_app/utils/questions_summary.dart';
+import 'package:quiz_app/utils/questions_summary/questions_summary.dart';
 
 class ResultScreen extends StatefulWidget {
-  ResultScreen({super.key, required this.selectedAnswers});
+  ResultScreen(
+      {super.key, required this.selectedAnswers, required this.onRestart});
+
+  final void Function() onRestart;
 
   List<String> selectedAnswers;
 
@@ -44,6 +48,11 @@ class _ResultScreenState extends State<ResultScreen> {
           children: [
             Text(
               'You answered $numCorrectQuestions out of $numTotalQuestions correct answers',
+              style: GoogleFonts.lato(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(
               height: 20,
@@ -52,13 +61,13 @@ class _ResultScreenState extends State<ResultScreen> {
             const SizedBox(
               height: 20,
             ),
-            TextButton(
-              onPressed: () {},
+            TextButton.icon(
+              onPressed: widget.onRestart,
               style: TextButton.styleFrom(
-                backgroundColor: Colors.deepPurple[300],
                 foregroundColor: Colors.white,
               ),
-              child: const Text('Restart the quiz'),
+              icon: const Icon(Icons.refresh),
+              label: const Text('Restart the quiz'),
             ),
           ],
         ),
